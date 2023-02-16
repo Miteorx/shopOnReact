@@ -1,14 +1,14 @@
 import React from 'react';
 import PageAccessValidator from 'components/PageAccessValidator';
-import InitialPage from 'pages/Initial';
+import CreateCustomerPage from 'pages/CreateCustomer';
 import PageContainer from 'components/PageContainer';
 
-const Initial = () => (
+const Shop = () => (
     <PageAccessValidator>
       <PageContainer>
-        <InitialPage/>
+        <CreateCustomerPage/>
       </PageContainer>
     </PageAccessValidator>
 );
 
-export default Initial;
+export default Shop;

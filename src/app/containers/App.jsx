@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, {useEffect, useState} from 'react';
+import {useDispatch} from 'react-redux';
 import {
   BrowserRouter,
   Switch,
@@ -11,6 +11,7 @@ import Header from 'components/Header';
 import PageInitial from 'pageProviders/Initial';
 import PageLogin from 'pageProviders/Login';
 import PageShop from 'pageProviders/Shop';
+import PageCreateCustomer from 'pageProviders/CreateCustomer'
 import * as PAGES from 'constants/pages';
 import {
   fetchUser,
@@ -31,27 +32,29 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <IntlProvider>
-        <Header />
-        {state.componentDidMount && (
-            <Switch>
-              <Route path={`/${PAGES.LOGIN}`}>
-                <PageLogin />
-              </Route>
-              <Route path={`/${PAGES.INITIAL}`}>
-                <PageInitial />
-              </Route>
+      <BrowserRouter>
+        <IntlProvider>
+          <Header/>
+          {state.componentDidMount && (
+              <Switch>
+                <Route path={`/${PAGES.LOGIN}`}>
+                  <PageLogin/>
+                </Route>
+                <Route path={`/${PAGES.INITIAL}`}>
+                  <PageInitial/>
+                </Route>
+                <Route path={`/${PAGES.SHOP}`}>
+                  <PageShop/>
+                </Route>
+                <Route path={`/${PAGES.CREATE_CUSTOMER}`}>
+                  <PageCreateCustomer/>
+                </Route>
 
-              <Route path={`/${PAGES.SHOP}`}>
-                <PageShop/>
-              </Route>
-
-              <Redirect from="*" to={`/${PAGES.INITIAL}`} />
-            </Switch>
-        )}
-      </IntlProvider>
-    </BrowserRouter>
+                <Redirect from="*" to={`/${PAGES.INITIAL}`}/>
+              </Switch>
+          )}
+        </IntlProvider>
+      </BrowserRouter>
   );
 };
 

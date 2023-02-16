@@ -5,7 +5,8 @@ import {
 
   ERROR_RECEIVE_DELETE_CUSTOMER,
   RECEIVE_DELETE_CUSTOMER,
-  REQUEST_DELETE_CUSTOMER
+  REQUEST_DELETE_CUSTOMER,
+
 } from './actionTypes';
 
 const errorReceiveCustomers = () => ({

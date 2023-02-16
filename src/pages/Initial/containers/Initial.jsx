@@ -26,19 +26,7 @@ const Initial = ({
 
   return (
     <div className={classes.container}>
-      {canSeeList && newPages.map((item, index) => (
-/*        <Link
-          href={index % 2 === 0
-            ? `https://www.google.com.ua/search?q=${item}&hl=ru`
-            : undefined}
-          to={index % 2 !== 0
-            ? (location => ({
-              ...location,
-              pathname: `/${item}`,
-              search: `${location.search}&newProp=42`,
-            }))
-            : undefined}
-        >*/
+      {canSeeList && newPages.map((item) => (
           <Link to={location => ({
             ...location,
             pathname: `/${item}`,
